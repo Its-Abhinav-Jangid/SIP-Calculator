@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIP Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1 class="title">
+      <span style="color: rgb(0, 184, 82)">SIP</span> Calculator
+    </h1>
+    <p class="detail">
+      SIP calculator allows you to calculate the expected amount you will
+      accumulate on your monthly investment.
+    </p>
+    <div class="calculator">
+      <main class="main">
+        <p class="calculator-detail">
+          Calculate the future value of your SIP investment
+        </p>
+        <div class="input-form flex">
+          <div class="form-input">
+            <div class="flex">
+              <label for="amount-slider" class="input-label"
+                >Monthly Investment</label
+              >
+              <input
+                type="text"
+                id="amount-display"
+                oninput="updateAmount(this.value); calculate()"
+                value="5000"
+              />
+            </div>
+            <input
+              type="range"
+              id="amount-slider"
+              min="500"
+              max="100000"
+              step="500"
+              value="5000"
+              oninput="updateSlider(this);updateAmount(this.value); calculate()"
+            />
+          </div>
+          <div class="form-input">
+            <div class="flex">
+              <label for="duration-slider" class="input-label"
+                >Investment Period</label
+              >
+              <input
+                type="text"
+                name="sip-duration"
+                id="duration-display"
+                min="1"
+                value="5"
+                oninput="updateDuration(this.value); calculate()"
+              />
+            </div>
+            <input
+              type="range"
+              id="duration-slider"
+              min="1"
+              max="60"
+              value="5"
+              oninput="updateSlider(this);updateDuration(this.value); calculate()"
+            />
+          </div>
+          <div class="form-input">
+            <div class="flex">
+              <label for="roi-slider" class="input-label"
+                >Expected Returns
+              </label>
+              <input
+                type="text"
+                name="return-per-year"
+                id="roi-display"
+                min="1"
+                value="12"
+                oninput="updateROI(this.value); calculate()"
+              />
+            </div>
+            <input
+              type="range"
+              id="roi-slider"
+              min="1"
+              max="40"
+              value="12"
+              oninput="updateSlider(this);updateROI(this.value); calculate()"
+            />
+          </div>
+        </div>
+        <div class="output flex">
+          <div class="result-chart flex-1">
+            <canvas class="chart"></canvas>
+          </div>
+          <div class="result-text flex-1">
+            <div class="flex space-between">
+              <p>Total amount</p>
+
+              <h3 id="total-amount" style="color: rgb(0, 184, 82)"></h3>
+            </div>
+            <div class="flex space-between">
+              <p>Invested Amount</p>
+              <h4 id="principle"></h3>
+            </div>
+            <div class="flex space-between">
+              <p>Estimated returns</p>
+
+              <h4 id="intrest"></h4>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="./chart.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
