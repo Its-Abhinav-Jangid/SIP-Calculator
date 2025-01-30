@@ -76,7 +76,7 @@ function calculate() {
 		duration <= 0 ||
 		!amountPerMonth ||
 		!roi ||
-		!duration
+		!duration || amountPerMonth > 10000000 || roi > 100 || duration > 100
 	) {
 		return;
 	}
