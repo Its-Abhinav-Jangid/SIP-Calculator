@@ -3,7 +3,7 @@
 body {
   background: #fff;
   color: #222;
-  font-family: "Rubik";
+  font-family: "Rubik" ,sans-serif;
   padding-top: 2rem;
 }
 .title {
@@ -29,7 +29,7 @@ body {
 }
 .calculator-detail {
   font-size: 20px;
-  font-family: "Rubik";
+
   font-weight: 600;
 }
 .form-input {
@@ -47,6 +47,9 @@ body {
   justify-content: space-between;
   margin-top: 3rem;
   gap: 3rem;
+}
+.form-input-top {
+  justify-content: space-between; 
 }
 input[type="range"] {
   -webkit-appearance: none;
@@ -98,7 +101,7 @@ input[type="text"] {
   font-size: 16px;
   font-weight: 600;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin-left: 1rem;
+  
   transition: 0.5s;
 }
 input[type="text"]:focus {
@@ -125,4 +128,52 @@ input[type="text"]:focus {
 } 
 .result-text p {
   color: #666;
+}
+.chart-mobile {
+  display: none;
+}
+@media (max-width: 600px) {
+  body{
+    padding: 0;
+    margin: 0;
+  }
+ .input-form{
+  flex-direction: column;
+ }
+ .output {
+  flex-direction: column;
+  
+ } 
+ .main {
+  background: transparent;
+
+  border: none;
+ }
+ #chart-desktop {
+  display: none;
+ }
+ .detail {
+  display: none;
+ }
+ input[type="text"] {
+  margin-right: 2%;
+ }
+ input[type="range"] {
+  width: 98%;
+ }
+ .output {
+  margin-top: 1rem;
+ }
+ #total-amount {
+  font-size: 20px;
+  
+ }
+ .calculator-detail {
+  font-size: 18px;
+ }
+ .chart-mobile {
+  display: flex;
+ }
+
+ 
 }

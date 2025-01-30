@@ -17,11 +17,11 @@
     <div class="calculator">
       <main class="main">
         <p class="calculator-detail">
-          Calculate the future value of your SIP investment
+          <span  style="color: rgb(0, 184, 82)">Calculate</span> the future value of your SIP investment
         </p>
         <div class="input-form flex">
           <div class="form-input">
-            <div class="flex">
+            <div class="flex form-input-top" >
               <label for="amount-slider" class="input-label"
                 >Monthly Investment</label
               >
@@ -42,8 +42,8 @@
               oninput="updateSlider(this);updateAmount(this.value); calculate()"
             />
           </div>
-          <div class="form-input">
-            <div class="flex">
+          <div class="form-input ">
+            <div class="flex form-input-top">
               <label for="duration-slider" class="input-label"
                 >Investment Period</label
               >
@@ -65,8 +65,8 @@
               oninput="updateSlider(this);updateDuration(this.value); calculate()"
             />
           </div>
-          <div class="form-input">
-            <div class="flex">
+          <div class="form-input ">
+            <div class="flex form-input-top">
               <label for="roi-slider" class="input-label"
                 >Expected Returns
               </label>
@@ -90,7 +90,7 @@
           </div>
         </div>
         <div class="output flex">
-          <div class="result-chart flex-1">
+          <div class="result-chart flex-1" id="chart-desktop">
             <canvas class="chart"></canvas>
           </div>
           <div class="result-text flex-1">
@@ -109,6 +109,10 @@
               <h4 id="intrest"></h4>
             </div>
           </div>
+          <div class="result-chart flex-1 chart-mobile">
+            <canvas class="chart" id="chart-mobile"></canvas>
+          </div>
+          
         </div>
       </main>
     </div>
